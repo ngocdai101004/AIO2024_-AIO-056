@@ -1,13 +1,16 @@
 def precision(tp, fp):
     return tp / (tp + fp)
- 
+
+
 def recall(tp, fn):
     return tp / (tp + fn)
+
 
 def f1_score(tp, fp, fn):
     pre = precision(tp, fp)
     rec = recall(tp, fn)
     return 2*(pre * rec) / (pre + rec)
+
 
 def evaluate_clasification(tp, fp, fn):
     if not isinstance(tp, int):
@@ -17,17 +20,17 @@ def evaluate_clasification(tp, fp, fn):
     if not isinstance(fp, int):
         print("fp must be int")
         return False
-    
+
     if not isinstance(fn, int):
         print("fn must be int")
         return False
-    
+
     if tp <= 0 or fp <= 0 or fn <= 0:
         print("tp and fp and fn must begreater than zero")
         return False
 
     pre = precision(tp, fp)
-    rec = recall(tp, fn) 
+    rec = recall(tp, fn)
     f1 = f1_score(tp, fp, fn)
 
     print(f"Precision is {pre}")
