@@ -1,7 +1,7 @@
 
 def max_kernel(num_list, window_size):
     if window_size < 1:
-        assert "k must be greater than or equal to 1"
+        return
     max_list = []
     n = len(num_list)
     current_maximum_value = max(num_list[0:window_size])
