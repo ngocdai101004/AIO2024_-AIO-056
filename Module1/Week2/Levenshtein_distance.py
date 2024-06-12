@@ -1,6 +1,6 @@
 
-#Using Recursion
-def  levenshtein_distance(source, target, m, n):
+# Using Recursion
+def levenshtein_distance(source, target, m, n):
 
     # Empty string
     if m == 0:
@@ -10,13 +10,14 @@ def  levenshtein_distance(source, target, m, n):
     if source[m-1] == target[n-1]:
         return levenshtein_distance(source, target, m-1, n-1)
     return 1 + min(
-        #insert
+        # insert
         levenshtein_distance(source, target, m, n-1),
-        #remove
+        # remove
         levenshtein_distance(source, target, m-1, n),
-        #replace
+        # replace
         levenshtein_distance(source, target, m-1, n-1)
     )
+
 
 if __name__ == "__main__":
     source = "hola"
